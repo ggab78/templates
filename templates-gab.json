@@ -1,6 +1,6 @@
 [
   {
-    "type": "container",
+    "type": 1,
     "title": "MySQL",
     "description": "The most popular open-source database",
     "categories": ["database"],
