@@ -1,5 +1,6 @@
 [
 	{
+		"type": 1,
 		"title": "Nginx",
 		"description": "High performance web server",
 		"image": "nginx:latest"
