@@ -12,5 +12,5 @@
       "443/tcp"
     ],
     "volumes": ["/etc/nginx", "/usr/share/nginx/html"]
-  },
+  }
 ]
