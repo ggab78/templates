@@ -5,6 +5,7 @@ services:
     image: 'bitnami/mariadb:latest'
     environment:
       - MARIADB_USER=bn_testlink
+      - MARIADB_PASSWORD=testlink123
       - MARIADB_DATABASE=bitnami_testlink
       - MARIADB_ROOT_USER=root
       - MARIADB_ROOT_PASSWORD=root123
