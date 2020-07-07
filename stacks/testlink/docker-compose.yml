@@ -30,7 +30,7 @@ services:
     networks:
       - app-tier
     ports:
-      - '82:8080'
+      - '8082:8080'
       - '8143:8143'
     volumes:
       - 'testlink_data:/bitnami'
