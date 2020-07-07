@@ -5,10 +5,12 @@ services:
     image: 'bitnami/mariadb:latest'
     environment:
       - MARIADB_USER=bn_testlink
+      - MARIADB_PASSWORD=testlink123
       - MARIADB_DATABASE=bitnami_testlink
-      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_ROOT_USER=root
+      - MARIADB_ROOT_PASSWORD=root123
     ports:
-    - '3307:3306'
+      - '3307:3306'
     volumes:
       - 'mariadb_data:/bitnami'
   testlink:
@@ -16,9 +18,12 @@ services:
     environment:
       - MARIADB_HOST=mariadb
       - MARIADB_PORT_NUMBER=3306
-      - TESTLINK_DATABASE_USER=bn_testlink
+      - TESTLINK_USERNAME=ggamrat
+      - TESTLINK_PASSWORD=gab123
       - TESTLINK_DATABASE_NAME=bitnami_testlink
-      - ALLOW_EMPTY_PASSWORD=yes
+      - TESTLINK_DATABASE_USER=bn_testlink
+      - TESTLINK_DATABASE_PASSWORD=testlink123
+      - TESTLINK_EMAIL=gabriel.gamrat@arcelormittal.com
       - APACHE_HTTP_PORT_NUMBER=8080
       - APACHE_HTTPS_PORT_NUMBER=8143
     ports:
