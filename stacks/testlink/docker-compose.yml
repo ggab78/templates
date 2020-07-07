@@ -1,22 +1,32 @@
 version: '2'
 
+networks:
+  app-tier:
+    driver: bridge
+
 services:
   mariadb:
-    image: 'docker.io/bitnami/mariadb:10.3-debian-10'
+    image: 'docker.io/bitnami/mariadb:latest'
     environment:
       - MARIADB_USER=bn_testlink
       - MARIADB_DATABASE=bitnami_testlink
       - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+    - '3307:3306'
+    networks:
+      - app-tier
     volumes:
       - 'mariadb_data:/bitnami'
   testlink:
-    image: 'docker.io/bitnami/testlink:1-debian-10'
+    image: 'docker.io/bitnami/testlink:latest'
     environment:
       - MARIADB_HOST=mariadb
-      - MARIADB_PORT_NUMBER=3306
+      - MARIADB_PORT_NUMBER=3307
       - TESTLINK_DATABASE_USER=bn_testlink
       - TESTLINK_DATABASE_NAME=bitnami_testlink
       - ALLOW_EMPTY_PASSWORD=yes
+    networks:
+      - app-tier
     ports:
       - '82:80'
       - '9443:443'
