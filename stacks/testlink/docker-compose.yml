@@ -1,9 +1,5 @@
 version: '2'
 
-networks:
-  app-tier:
-    driver: bridge
-
 services:
   mariadb:
     image: 'docker.io/bitnami/mariadb:latest'
@@ -13,8 +9,6 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
     ports:
     - '3307:3306'
-    networks:
-      - app-tier
     volumes:
       - 'mariadb_data:/bitnami'
   testlink:
@@ -27,8 +21,6 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
       - APACHE_HTTP_PORT_NUMBER=8080
       - APACHE_HTTPS_PORT_NUMBER=8143
-    networks:
-      - app-tier
     ports:
       - '8082:8080'
       - '8143:8143'
