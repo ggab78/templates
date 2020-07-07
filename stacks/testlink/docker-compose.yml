@@ -8,6 +8,7 @@ services:
       - MARIADB_DATABASE=bitnami_testlink
       - MARIADB_ROOT_USER=root
       - MARIADB_ROOT_PASSWORD=root123
+      - ALLOW_EMPTY_PASSWORD=yes
     ports:
       - '3307:3306'
     volumes:
@@ -25,6 +26,7 @@ services:
       - TESTLINK_EMAIL=gabriel.gamrat@arcelormittal.com
       - APACHE_HTTP_PORT_NUMBER=8080
       - APACHE_HTTPS_PORT_NUMBER=8143
+      - ALLOW_EMPTY_PASSWORD=yes
     ports:
       - '8082:8080'
       - '8143:8143'
