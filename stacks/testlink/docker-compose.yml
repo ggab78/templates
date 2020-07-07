@@ -2,11 +2,11 @@ version: '2'
 
 services:
   mariadb:
-    image: 'mariadb:latest'
+    image: 'bitnami/mariadb:latest'
     environment:
-      - MYSQL_USER=bn_testlink
-      - MYSQL_DATABASE=bitnami_testlink
-      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_USER=bn_testlink
+      - MARIADB_DATABASE=bitnami_testlink
+      - ALLOW_EMPTY_PASSWORD=yes
     ports:
     - '3307:3306'
     restart: always
