@@ -1,27 +1,55 @@
 [
-  {
-    "type": 1,
-    "title": "MySQL",
-    "description": "The most popular open-source database",
-    "categories": ["database"],
-    "platform": "linux",
-    "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
-    "image": "mysql:5.6.47",
-    "env": [
-      {
-        "name": "MYSQL_ROOT_PASSWORD",
-        "label": "Root password",
-        "default": "root"
-      }
-    ],
-    "ports": ["3306:3306/tcp"],
-    "volumes": [
-      {
-        "container": "/var/lib/mysql",
-        "bind": "/host_mnt/c/Users/A0733250/docker-data/mysql",
-        "readonly": false
-      }	
-    ],
-    "command": "--max-allowed-packet=16M"
-  }
+	{
+		"type": 1,
+		"title": "MySQL local data",
+		"name": "mysql_local",
+		"description": "local data are mounted to c/Users/A0733250/docker-data/mysql",
+		"categories": [
+			"database"
+		],
+		"platform": "linux",
+		"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
+		"image": "mysql:5.6.47",
+		"env": [
+			{
+				"name": "MYSQL_ROOT_PASSWORD",
+				"label": "Root password",
+				"default": "root"
+			}
+		],
+		"ports": [
+			"3306:3306/tcp"
+		],
+		"volumes": [
+			{
+				"container": "/var/lib/mysql",
+				"bind": "/host_mnt/c/Users/A0733250/docker-data/mysql",
+				"readonly": false
+			}
+		],
+		"command": "--max-allowed-packet=16M"
+	},
+	{
+		"type": 1,
+		"title": "MySQL volume data",
+		"name": "mysql_volume",
+		"description": "data are stored inside docker volume",
+		"categories": [
+			"database"
+		],
+		"platform": "linux",
+		"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
+		"image": "mysql:5.6.47",
+		"env": [
+			{
+				"name": "MYSQL_ROOT_PASSWORD",
+				"label": "Root password",
+				"default": "root"
+			}
+		],
+		"ports": [
+			"3306:3306/tcp"
+		],
+		"command": "--max-allowed-packet=16M"
+	}
 ]
