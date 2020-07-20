@@ -56,6 +56,7 @@
 		"type": 1,
 		"title": "MSSQL volume data",
 		"name": "mssql_volume",
+		"hostname": "mssql_volume",
 		"description": "data are stored inside docker volume",
 		"categories": [
 			"database"
@@ -72,11 +73,15 @@
 				"name": "ACCEPT_EULA",
 				"label": "EULA licence",
 				"default": "Y"
+			},
+			{
+				"name": "MSSQL_PID",
+				"label": "MSSQL_PID",
+				"default": "Express"
 			}
 		],
 		"ports": [
 			"1433:1433/tcp"
 		]
-		
 	}
 ]
