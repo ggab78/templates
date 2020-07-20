@@ -51,5 +51,31 @@
 			"3306:3306/tcp"
 		],
 		"command": "--max-allowed-packet=16M"
+	},
+	{
+		"type": 1,
+		"title": "MSSQL volume data",
+		"name": "mssql_volume",
+		"description": "data are stored inside docker volume",
+		"categories": [
+			"database"
+		],
+		"platform": "linux",
+		"image": "mcr.microsoft.com/mssql/server:2019-CU5-ubuntu-18.04",
+		"env": [
+			{
+				"name": "SA_PASSWORD",
+				"label": "Root password",
+				"default": "root"
+			},
+			{
+				"name": "ACCEPT_EULA",
+				"label": "EULA licence",
+				"default": "Y"
+			}
+		],
+		"ports": [
+			"1433:1433/tcp"
+		]
 	}
 ]
