@@ -54,7 +54,7 @@
 	},
 	{
 		"type": 1,
-		"title": "MSSQL volume data",
+		"title": "MSSQL volume",
 		"name": "mssql_volume",
 		"hostname": "mssql_volume",
 		"description": "data are stored inside docker volume",
