@@ -83,5 +83,44 @@
 		"ports": [
 			"1433:1433/tcp"
 		]
+	},
+	{
+		"type": 1,
+		"title": "MSSQL data volume",
+		"name": "mssql_data_volume",
+		"hostname": "mssql_data_volume",
+		"description": "data are stored in volume data container and are available even if mssql container is removed",
+		"categories": [
+			"database"
+		],
+		"platform": "linux",
+		"image": "mcr.microsoft.com/mssql/server:2019-CU5-ubuntu-18.04",
+		"env": [
+			{
+				"name": "SA_PASSWORD",
+				"label": "Root password",
+				"default": "Sql0909!@#"
+			},
+			{
+				"name": "ACCEPT_EULA",
+				"label": "EULA licence",
+				"default": "Y"
+			},
+			{
+				"name": "MSSQL_PID",
+				"label": "MSSQL_PID",
+				"default": "Express"
+			}
+		],
+		"volumes": [
+			{
+				"container": "/var/opt/mssql",
+				"bind": "sqlvolume",
+				"readonly": false
+			}
+		],
+		"ports": [
+			"1433:1433/tcp"
+		]
 	}
 ]
